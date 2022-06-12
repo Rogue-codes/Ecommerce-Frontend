@@ -1,8 +1,8 @@
-import React from 'react'
-import { useDispatch } from 'react-redux';
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components'
-import { addTocart } from './Features/cartSlice';
+import { addTocart, getTotal } from './Features/cartSlice';
 import { useGetAllLaptopsQuery } from './Features/productApi';
 const FirstSection = styled.section`
     @media (max-width:480px) {
@@ -210,10 +210,15 @@ const CardSection = styled.div`
 function Laptops() {
     const {data, error, isLoading} = useGetAllLaptopsQuery();
     const dispatch = useDispatch();
+
+    const cart = useSelector((state)=>state.cart)
+
+    useEffect(()=>{
+        dispatch(getTotal())
+    },[cart,dispatch])
+
     const handleAddToCart = (item) => {
         dispatch(addTocart(item))
-        
-        window.location.reload(false);
     }
   return (
     <>
