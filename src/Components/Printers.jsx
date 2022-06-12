@@ -8,7 +8,8 @@ const FirstSection = styled.section`
     @media (max-width:480px) {
         margin-top: 15%;
     }
-    width: 90%;
+    width: 100%;
+    padding: 2%;
     height: 70vh;
     margin: auto;
     display: flex;
@@ -18,18 +19,17 @@ const FirstSection = styled.section`
         @media (max-width:480px) {
             display: none;
         }
-        width: 15%;
+        width: 20%;
         height: 80%;
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-        background:#a44153;
         a{
             padding: 5%;
             display: block;
             text-decoration: none;
-            color: #fff;
-            font-family: 'Raleway', sans-serif;
+            color: #000;
+            transition: all 0.5s linear;
             &:hover{
-                color: #f8f8f8
+                color: #a44153;
             }
         }
     }
@@ -37,7 +37,7 @@ const FirstSection = styled.section`
         @media (max-width:480px) {
             width: 100%;
         }
-        width: 60%;
+        width: 55%;
         height: 80%;
         background: #a44153;
         border-radius: 10px;

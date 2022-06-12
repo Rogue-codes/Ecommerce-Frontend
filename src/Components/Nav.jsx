@@ -69,7 +69,10 @@ const NavContainer = styled.nav`
         font-size: 1.2rem;
     }
   }
-
+  .cq{
+    position: absolute;
+    margin-top: 0%;
+  }
 `
 const Search = styled.input`
   @media (max-width:480px) {
@@ -125,7 +128,7 @@ function Nav({searchValue,setSearchValue}) {
     <NavContainer>
         <Link to='/'><h2>SA-Market</h2></Link>
         <Search value={searchValue} onChange={(e)=>setSearchValue(e.target.value)} placeholder='search...'/>
-        <Link to='/cart'><BsHandbagFill size='2rem'/><span>{cartQuantity}</span></Link>
+        <Link to='/cart'><BsHandbagFill size='2rem'/><span className='cq'><b>{cartQuantity}</b></span></Link>
 
         <span className='bars' onClick={()=>setShowMenu(!showMenu)}><GiHamburgerMenu/></span>
 
