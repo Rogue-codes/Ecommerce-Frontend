@@ -21,7 +21,7 @@ export const productAPi = createApi({
             query: () => 'printer', /* we getting the data from the '/printer' endpoint */
         }),
         getAllMonitors: builder.query ({
-            query: () => 'monitor', /* we getting the data from the '/printer' endpoint */
+            query: () => 'monitor', /* we getting the data from the '/monitor' endpoint */
         }),
     })
 

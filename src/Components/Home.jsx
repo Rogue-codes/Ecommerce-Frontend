@@ -37,10 +37,10 @@ const FirstSection = styled.section`
             padding: 5%;
             display: block;
             text-decoration: none;
-            color: #000;
+            color: #a44153;
             transition: all 0.5s linear;
             &:hover{
-                color: #a44153;
+                color: #000;
             }
         }
     }
