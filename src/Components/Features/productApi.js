@@ -5,7 +5,7 @@ import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react'
 export const productAPi = createApi({
     reducerPath: 'productApi', /* moreless like the name of the reducer */
     baseQuery: fetchBaseQuery({
-        baseUrl: 'https://rogueecommerceapp.herokuapp.com/' /* our base URL where we want to fetch the data from https://rogueecommerceapp.herokuapp.com/*/
+        baseUrl: 'http://localhost:5000/' /* our base URL where we want to fetch the data from https://rogueecommerceapp.herokuapp.com/ https://rogueecommerceapp.herokuapp.com/*/
     }),
     endpoints:(builder) => ({
         getAllProducts: builder.query ({
@@ -23,8 +23,11 @@ export const productAPi = createApi({
         getAllMonitors: builder.query ({
             query: () => 'monitor', /* we getting the data from the '/monitor' endpoint */
         }),
+        getElementById: builder.query ({
+            query: () => `products/1`, /* we getting individual data from the '/products/1' endpoint */
+        }),
     })
 
 })
 
-export const {useGetAllProductsQuery, useGetAllLaptopsQuery, useGetAllRouterSwitchesQuery, useGetAllPrintersQuery, useGetAllMonitorsQuery} = productAPi /* destructuring useGetAllProductsQuery, useGetAllLaptopsQuery and useGetAllRouterSwitchesQuery which is a custom hook we are getting from getAllProducts builder and we are passing it into our productApi slice. */
+export const {useGetAllProductsQuery, useGetAllLaptopsQuery, useGetAllRouterSwitchesQuery, useGetAllPrintersQuery, useGetAllMonitorsQuery, useGetElementByIdQuery} = productAPi /* destructuring useGetAllProductsQuery, useGetAllLaptopsQuery and useGetAllRouterSwitchesQuery which is a custom hook we are getting from getAllProducts builder and we are passing it into our productApi slice. */

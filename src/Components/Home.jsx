@@ -230,13 +230,13 @@ const Card = styled.div`
     }
     .view{
         position: absolute;
-        top: 70%;
+        top: 75%;
         left: 75%;
         color: #fff;
         border-radius: 5px;
         background: #a44153;
         z-index: 5;
-        padding: 2% 5%;
+        padding: 1% 3%;
         font-size: 1.2vw;
         font-family: 'Rubik', sans-serif;
     }
@@ -276,7 +276,6 @@ const Loader = styled.div`
 
 function Home({searchValue}) {
     const {data, error, isLoading} = useGetAllProductsQuery();
-
     const dispatch = useDispatch()
 
     const navigate = useNavigate()
@@ -290,6 +289,7 @@ function Home({searchValue}) {
         <FirstSection>
             <div className="left">
                 <br /><br />
+                <Link to='/'>Home</Link>
                 <Link to='/laptop'>Laptops</Link>
                 <Link to='/routerSwitches'>Switches & Routers</Link>
                 <Link to='/printer'>Printers</Link>
@@ -338,19 +338,21 @@ function Home({searchValue}) {
                     <Header><h2>currently in stock</h2></Header>
                     <CardSection>
                         {
+                            // array method that enables the search functionality
                             data.filter( (val) => {
                                 if(searchValue === ''){
                                     return val
                                 }else if(val.name.toLowerCase().includes(searchValue.toLowerCase())){
                                     return val
                                 } return null
+                                // mapping through our data
                             }).map((product) => <Card key={product.id}>
                                 <h2>{product.name}</h2>
                                 <p>{product.description}</p>
                                 <p className='price'>₦ {product.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</p>
                                 <img src={product.image} alt={product.name} />
                                 <button onClick={()=>handleAddToCart(product)}>Add to Cart</button>
-                                <Link to={`/:${product.id}`} className='view'><BsFillEyeFill/></Link>
+                                <Link to='/item' className='view'><BsFillEyeFill/></Link>
                             </Card>)
                         }
                     </CardSection>

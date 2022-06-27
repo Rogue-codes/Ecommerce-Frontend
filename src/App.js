@@ -12,6 +12,7 @@ import Monitors from "./Components/Monitors";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import Footer from "./Components/Footer";
+import RegLog from "./Components/RegLog";
 
 const Loader = styled.div`
     width: 100%;
@@ -56,7 +57,8 @@ function App() {
             <Route path="/monitor" element={<Monitors/>} />
             <Route path="/cart" element={<Cart/>} />
             <Route path='*' element={<NotFoundpage/>} />
-            <Route path='/:id' element={<Item/>} />
+            <Route path='/item' element={<Item/>} />
+            <Route path='/account' element={<RegLog/>} />
           </Routes>
           <Footer/>
         </Router>

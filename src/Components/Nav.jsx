@@ -73,6 +73,14 @@ const NavContainer = styled.nav`
     position: absolute;
     margin-top: 0%;
   }
+  .logReg{
+      width: 15%;
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2%;
+    }
 `
 const Search = styled.input`
   @media (max-width:480px) {
@@ -128,7 +136,10 @@ function Nav({searchValue,setSearchValue}) {
     <NavContainer>
         <Link to='/'><h2>SA-Market</h2></Link>
         <Search value={searchValue} onChange={(e)=>setSearchValue(e.target.value)} placeholder='search...'/>
-        <Link to='/cart'><BsHandbagFill size='2rem'/><span className='cq'><b>{cartQuantity}</b></span></Link>
+        <div className="logReg">
+          <Link to='/account'>Account</Link>
+          <Link to='/cart'><BsHandbagFill size='2rem'/><span className='cq'><b>{cartQuantity}</b></span></Link>
+        </div>
 
         <span className='bars' onClick={()=>setShowMenu(!showMenu)}><GiHamburgerMenu/></span>
 

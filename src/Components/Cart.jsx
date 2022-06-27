@@ -40,6 +40,8 @@ const CartContainer = styled.div`
     @media (max-width:480px) {
       font-size: 1rem;
     }
+    margin-top: 2%;
+    font-weight: 800;
     width: 100%;
     height: 5vh;
     display: flex;
