@@ -10,13 +10,13 @@ const Container = styled.div`
 `
 const Left = styled.div`
     width: 50%;
-    height: 100vh;
+    height: 80vh;
     border-right: 1px solid #a44153;
     position : relative;
     h1{
         display: flex;
         justify-content: center;
-        margin-top: 15%;
+        margin-top: 10%;
         font-size: 2vw;
         color: #a44153;
     }
@@ -28,7 +28,7 @@ const Left = styled.div`
         margin-top: 5%;
         padding-left: 2%;
         border: none;
-        border-bottom: 2px solid #a44153;
+        border-bottom: 1px solid #a44153;
         &::placeholder{
             color: #a44153;
         }
@@ -44,7 +44,7 @@ const Left = styled.div`
         margin-top: 5%;
         padding-left: 2%;
         border: none;
-        border-bottom: 2px solid #a44153;
+        border-bottom: 1px solid #a44153;
         &::placeholder{
             color: #a44153;
         }
@@ -79,18 +79,18 @@ const Left = styled.div`
     .view{
         position: absolute;
         left: 85%;
-        top:44%;
+        top:48%;
         color: #a44153;
         cursor: pointer;
     }
 `
 const Right = styled.div`
     width: 50%;
-    height: 100vh;
+    height: 80vh;
     h1{
         display: flex;
         justify-content: center;
-        margin-top: 15%;
+        margin-top: 10%;
         font-size: 2vw;
         color: #a44153;
     }
@@ -137,7 +137,7 @@ function RegLog() {
             <input type="text" placeholder="E-mail" />
             <input type={type} placeholder="Password" /><BsFillEyeFill onMouseDown={togglePassword} className='view'/>
             <input type="checkbox" /> <span>Keep me logged in</span>
-            <button>Login</button>
+            <button>LOGIN</button>
         </Left>
 
         <Right>
