@@ -5,7 +5,7 @@ import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react'
 export const productAPi = createApi({
     reducerPath: 'productApi', /* moreless like the name of the reducer */
     baseQuery: fetchBaseQuery({
-        baseUrl: 'http://localhost:5000/' /* our base URL where we want to fetch the data from https://rogueecommerceapp.herokuapp.com/ https://rogueecommerceapp.herokuapp.com/*/
+        baseUrl: 'https://rogueecommerceapp.herokuapp.com/ https://rogueecommerceapp.herokuapp.com/' /* our base URL where we want to fetch the data from */
     }),
     endpoints:(builder) => ({
         getAllProducts: builder.query ({
