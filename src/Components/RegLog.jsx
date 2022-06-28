@@ -79,7 +79,7 @@ const Left = styled.div`
     .view{
         position: absolute;
         left: 85%;
-        top:48%;
+        top:40%;
         color: #a44153;
         cursor: pointer;
     }
